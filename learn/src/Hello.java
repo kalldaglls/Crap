@@ -21,10 +21,17 @@ public class Hello {
             } else {
                 //for (int j = 0; j <= array[i].length() - 1; j++) {
                 int j = 0;
+                String sum = "";
                 while ((j <= array[i].length() - 1) && (b.length() - 1 >= j)) {
-                    if (array[i].charAt(j) == b.charAt(j)) {//что делать, если загаданное число больще, чем введенное(дает ошибку out of range), а мы хотим дальше писать ##? Решено!
+                    sum = sum + array[i].charAt(j);
+                    if (sum.equals(array[i])) {
+                        System.out.println("You won!");
+                        break;//avocadYou won! при введенном avocadoo, но не сделал break и начал заново
+                    }
+                    else if (array[i].charAt(j) == b.charAt(j)) {//что делать, если загаданное число больще, чем введенное(дает ошибку out of range), а мы хотим дальше писать ##? Решено!
                         System.out.print(array[i].charAt(j));
-                    } else {
+                        }
+                     else {
                         if (j < array[i].length() - 1) System.out.print("###");
                         else System.out.println("###");
                     }
